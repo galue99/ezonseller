@@ -61,7 +61,7 @@ class CancelSuscriptionPage extends React.Component {
                         <div>
                             {cancelPlans.items.map((cancel, index) =>
                                 <div className="text-center">
-                                    <p>{cancel.description}</p>
+                                    <p class="text-justify">{cancel.description}</p>
                                 </div>
                             )}                    
                         </div>
