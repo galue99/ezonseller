@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
+import '../index.css';
 
 
 import { userActions } from '../_actions';
 
 class PaymentCardPage extends React.Component {
-    
+
     constructor(props) {
             super(props);
 
@@ -48,47 +49,49 @@ class PaymentCardPage extends React.Component {
     render() {
         const { submitted, card } = this.state;
         return (
-            <div className="">
+            <div className="col-md-12">
                 <Header/>
-                <div className="container">
-                    <h1>Add Credit Card</h1>
-                    <form name="form" onSubmit={this.handleSubmit}>
-                        <div className={'form-group' + (submitted && !card.name ? ' has-danger' : '')}>
-                            <label htmlFor="name">Name PlaceHolder</label>
-                            <input type="text" className="form-control" name="name" onChange={this.handleChange} />
-                            {submitted && !card.name &&
-                                <div className="form-control-feedback">Name is required</div>
-                            }
-                        </div>
-                        <div className={'form-group' + (submitted && !card.number_card ? ' has-danger' : '')}>
-                            <label htmlFor="number_card">Number Card</label>
-                            <input type="text" className="form-control" name="number_card" onChange={this.handleChange} />
-                            {submitted && !card.number_card &&
-                                <div className="form-control-feedback">Number Card is required</div>
-                            }
-                        </div>
-                        <div className={'form-group' + (submitted && !card.cod_security ? ' has-danger' : '')}>
-                            <label htmlFor="cod_security">Cod Security</label>
-                            <input type="text" className="form-control" name="cod_security"  onChange={this.handleChange} />
-                            {submitted && !card.cod_security &&
-                                <div className="form-control-feedback">Cod Security is required</div>
-                            }
-                        </div>
-                        <div className={'form-group' + (submitted && !card.date_expiration ? ' has-danger' : '')}>
-                            <label htmlFor="date_expiration">Date Expiration</label>
-                            <input type="text" className="form-control" name="date_expiration"  onChange={this.handleChange} />
-                            {submitted && !card.date_expiration &&
-                                <div className="form-control-feedback">Date Expiration is required</div>
-                            }
-                        </div>
-                        
-                        <div className="form-group">
-                            <button className="btn btn-primary">Add Credit Card</button>
-                   
-                            <Link to="/profile" className="btn btn-link">Cancel</Link>
-                        </div>
-                    </form>
-                </div>
+                    <h1 className="text-center">Add Credit Card</h1>
+                    <div className="col-md-7 content-edit col-center">
+                      <form name="form" onSubmit={this.handleSubmit}>
+                          <div className={'form-group' + (submitted && !card.name ? ' has-danger' : '')}>
+                              <label htmlFor="name">Name PlaceHolder</label>
+                              <input type="text" className="form-control" name="name" onChange={this.handleChange} />
+                              {submitted && !card.name &&
+                                  <div className="form-control-feedback">Name is required</div>
+                              }
+                          </div>
+                          <div className={'form-group' + (submitted && !card.number_card ? ' has-danger' : '')}>
+                              <label htmlFor="number_card">Number Card</label>
+                              <input type="text" className="form-control" name="number_card" onChange={this.handleChange} />
+                              {submitted && !card.number_card &&
+                                  <div className="form-control-feedback">Number Card is required</div>
+                              }
+                          </div>
+                          <div className={'form-group' + (submitted && !card.cod_security ? ' has-danger' : '')}>
+                              <label htmlFor="cod_security">Cod Security</label>
+                              <input type="text" className="form-control" name="cod_security"  onChange={this.handleChange} />
+                              {submitted && !card.cod_security &&
+                                  <div className="form-control-feedback">Cod Security is required</div>
+                              }
+                          </div>
+                          <div className={'form-group' + (submitted && !card.date_expiration ? ' has-danger' : '')}>
+                              <label htmlFor="date_expiration">Date Expiration</label>
+                              <input type="text" className="form-control" name="date_expiration"  onChange={this.handleChange} />
+                              {submitted && !card.date_expiration &&
+                                  <div className="form-control-feedback">Date Expiration is required</div>
+                              }
+                          </div>
+
+                          <div className="form-group">
+                              <button className="btn btn-primary">Add Credit Card</button>
+
+                              <Link to="/profile" className="btn btn-danger">Cancel</Link>
+                          </div>
+                      </form>
+                    </div>
+
+
             </div>
         );
     }
