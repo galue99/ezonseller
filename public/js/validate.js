@@ -41,11 +41,6 @@ $( "body" ).mousemove(function( event ) {
         }
     });
 
-    $("#myFormCancel").validate({
-        submitHandler: function(form) {
-        }
-    });
-
     $("#formCreditCard").validate({
         submitHandler: function(form) {
             $('#creditCard_form').val('1');
@@ -87,6 +82,11 @@ $( "body" ).mousemove(function( event ) {
                 year: {
 					range: "Year invalid"
 				}
+            }
+        });
+
+        $("#myFormCancel").validate({
+            submitHandler: function(form) {
             }
         });
     

@@ -132,6 +132,7 @@ function changePasswordEdit(data) {
                 data => {
                     dispatch(success());
                     dispatch(alertActions.success(data.message));
+                    console.log(data);
                     let value = {'Token': data.token, 'id': data.id};
                     localStorage.setItem('user', JSON.stringify(value));
                     history.push('/profile');
@@ -202,6 +203,7 @@ function updateUser(user) {
             .then(
                 user => {
                     dispatch(success(user));
+                    console.log(user);
                     dispatch(alertActions.success(user.message));
                     history.push('/profile');
                 }).catch(error => {
@@ -376,5 +378,3 @@ function cancelPlan(data) {
     function success(suscription) { return { type: userConstants.SUSCRIPTION_GET_SUCCESS, suscription } }
     function failure(error)    { return { type: userConstants.SUSCRIPTION_GET_FAILURE, error } }
 }
-
-

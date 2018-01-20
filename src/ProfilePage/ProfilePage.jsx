@@ -9,6 +9,7 @@ import { userActions } from '../_actions';
 
 class ProfilePage extends React.Component {
     super(props){
+        this.handleAcquirePlan = this.handleAcquirePlan.bind(this);
         this.handleDeleteCard  = this.handleDeleteCard.bind(this);
     }
 
@@ -16,6 +17,10 @@ class ProfilePage extends React.Component {
         let valueUser = JSON.parse(localStorage.getItem('user'));
         this.props.dispatch(userActions.getUserId(valueUser.id));
         this.props.dispatch(userActions.paymentPlans());
+    }
+
+    handleAcquirePlan(param, e){
+        console.log(param);
     }
 
     handleDeleteCard(data, e){
