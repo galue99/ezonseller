@@ -88,8 +88,6 @@ class EditProfilePage extends React.Component {
         if (photo) {
             $().ready(function() {
                 var value =  $("#image_form").val();
-                console.log(value);
-
                 if(value) {
                     var form = $('#myFormImage')[0];
                     // Create an FormData object
