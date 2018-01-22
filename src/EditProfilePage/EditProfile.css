@@ -2,6 +2,7 @@
   padding: 50px;
   background-color: #eaeaea;
   margin-top: 20px;
+  box-shadow: 4px 4px 10px #ccc;
 }
 .form-padding{
   padding: 0px 60px;
